@@ -38,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="Tue Sep 29 2015 00:32:19 GMT+0800 (CST)">
+    <div class="book" data-level="2" data-basepath=".." data-revision="Tue Sep 29 2015 00:36:34 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -206,32 +206,26 @@
                     <section class="normal" id="section-">
                     
                         <h2 id="store">store</h2>
-<p>store.js uses localStorage when available, and falls back on the userData behavior in IE6 and IE7. No flash to slow down your page load. No cookies to fatten your network requests.</p>
-<p>store.js depends on JSON for serialization to disk.</p>
+<p>store &#x6A21;&#x5757;&#x662F;&#x7ED9; localStorage &#x52A0;&#x7684;&#x4E00;&#x5C42;&#x5957;</p>
+<p>tip: &#x4F7F;&#x7528;&#x524D;&#x5224;&#x65AD;RU.store.enabled</p>
 <h3 id="%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
-<pre><code>// Store &apos;marcus&apos; at &apos;username&apos;
-RU.store.set(&apos;username&apos;, &apos;marcus&apos;)
-
-// Get &apos;username&apos;
+<pre><code>RU.store.set(&apos;username&apos;, &apos;marcus&apos;)
 RU.store.get(&apos;username&apos;)
-
-// Remove &apos;username&apos;
 RU.store.remove(&apos;username&apos;)
 
 // Clear all keys
 RU.store.clear()
 
-// Store an object literal - store.js uses JSON.stringify under the hood
+// &#x76F4;&#x63A5;&#x5B58;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x91CF;, &#x4F1A;&#x7528;JSON.stringify&#x683C;&#x5F0F;&#x5316;
 RU.store.set(&apos;user&apos;, { name: &apos;marcus&apos;, likes: &apos;javascript&apos; })
 
-// Get the stored object - store.js uses JSON.parse under the hood
-var user = RU.store.get(&apos;user&apos;)
-alert(user.name + &apos; likes &apos; + user.likes)
+// &#x76F4;&#x63A5;&#x53D6;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x91CF;, &#x4F1A;&#x7528;JSON.parse&#x683C;&#x5F0F;&#x5316;
+RU.store.get(&apos;user&apos;)
 
-// Get all stored values
+// &#x83B7;&#x53D6;&#x6240;&#x6709;&#x6570;&#x636E;
 RU.store.getAll().user.name == &apos;marcus&apos;
 
-// Loop over all stored values
+// &#x904D;&#x5386;&#x6240;&#x6709;&#x5B58;&#x5165;&#x7684;&#x6570;&#x636E;
 RU.store.forEach(function(key, val) {
     console.log(key, &apos;==&apos;, val)
 })
