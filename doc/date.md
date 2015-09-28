@@ -48,7 +48,3 @@ js
 	 */
 	now: function ()
 ```
-
-### Demo
-
-查看[Demo](../examples/date.html)
