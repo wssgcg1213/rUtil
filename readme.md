@@ -8,6 +8,10 @@
 - date: 2015-09-29
 - Thanks to: alipay mobile fe team
 
+### GIT
+
+[github](https://github.com/wssgcg1213/rUtil)
+
 ### Documentation
 
 [查看文档](http://rutil.zeroling.com)
