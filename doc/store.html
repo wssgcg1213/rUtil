@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>date | 关于rUtil</title>
+        <title>store | 关于rUtil</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.2">
@@ -29,10 +29,8 @@
         
     
     
-    <link rel="next" href="../doc/store.html" />
     
-    
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../doc/date.html" />
     
 
         
@@ -40,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="Tue Sep 29 2015 00:18:01 GMT+0800 (CST)">
+    <div class="book" data-level="2" data-basepath=".." data-revision="Tue Sep 29 2015 00:18:01 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -71,7 +69,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="doc/date.html">
+        <li class="chapter " data-level="1" data-path="doc/date.html">
             
                 
                     <a href="../doc/date.html">
@@ -86,7 +84,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2" data-path="doc/store.html">
+        <li class="chapter active" data-level="2" data-path="doc/store.html">
             
                 
                     <a href="../doc/store.html">
@@ -207,51 +205,37 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="date">date</h2>
-<p>date&#x63D0;&#x4F9B;&#x4E86;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&#x548C;&#x683C;&#x5F0F;&#x5316;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x7684;&#x65B9;&#x6CD5;</p>
+                        <h2 id="store">store</h2>
+<p>store.js uses localStorage when available, and falls back on the userData behavior in IE6 and IE7. No flash to slow down your page load. No cookies to fatten your network requests.</p>
+<p>store.js depends on JSON for serialization to disk.</p>
 <h3 id="%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
-<p>js</p>
-<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> date = RU.date;
-    <span class="hljs-keyword">var</span> d = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
-    <span class="hljs-keyword">var</span> ds = date.format(d,<span class="hljs-string">&apos;yy-MM-dd&apos;</span>); <span class="hljs-comment">//2014-05-03</span>
-    <span class="hljs-keyword">var</span> dnow = date.now(); <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5982;&#xFF1A;1403104207894</span>
-</code></pre>
-<h3 id="%E6%8E%A5%E5%8F%A3%E5%88%97%E8%A1%A8">&#x63A5;&#x53E3;&#x5217;&#x8868;</h3>
-<pre><code class="lang-javascript">
-    /**
-     * &#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;
-     *
-     * @memberof RU.date
-     * @param {!Date} date - &#x65E5;&#x671F;&#x5BF9;&#x8C61;
-     * @param {?String} formatter - &#x6307;&#x5B9A;&#x683C;&#x5F0F;&#x5316;&#x683C;&#x5F0F; &#x683C;&#x5F0F;&#x8BF4;&#x660E; y&#x4EE3;&#x8868;&#x5E74;&#x4EFD;&#xFF0C;M&#x4EE3;&#x8868;&#x6708;&#x4EFD;&#xFF0C;d&#x4EE3;&#x8868;&#x5929;&#x6570;&#xFF0C;h&#x4EE3;&#x8868;&#x65F6;&#xFF0C;m&#x4EE3;&#x8868;&#x5206;&#xFF0C;s&#x4EE3;&#x8868;&#x79D2;
-     *
-     * @returns {String} - &#x5982;&#x679C;&#x4F20;&#x5165;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;Invalid Date&#x5B57;&#x7B26;&#x4E32;
-     *
-     * @desc &#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;
-     *
-     * @example
-     * var d = new Date();
-     * var ds = RU.date.format(d,&apos;yy-MM-dd&apos;); //2014-05-03
-     * var ds = RU.date.format(d,&apos;yy/M/d&apos;); //2014/5/3
-     * var ds = RU.date.format(d,&apos;yy/MM/d hh:mm:ss&apos;); //2014/5/3 18:31:24
-     */
-    format: function (date, formatter)
+<pre><code>// Store &apos;marcus&apos; at &apos;username&apos;
+RU.store.set(&apos;username&apos;, &apos;marcus&apos;)
 
-    /**
-     * &#x5F53;&#x524D;&#x65F6;&#x95F4;&#x65F6;&#x95F4;&#x6233;
-     *
-     * @memberof RU.date
-     *
-     * @returns {Number}
-     *
-     * @desc &#x5F53;&#x524D;&#x65F6;&#x95F4;&#x65F6;&#x95F4;&#x6233;
-     *
-     * @example
-     * var nowStamp= RU.date.now();
-     */
-    now: function ()
-</code></pre>
+// Get &apos;username&apos;
+RU.store.get(&apos;username&apos;)
 
+// Remove &apos;username&apos;
+RU.store.remove(&apos;username&apos;)
+
+// Clear all keys
+RU.store.clear()
+
+// Store an object literal - store.js uses JSON.stringify under the hood
+RU.store.set(&apos;user&apos;, { name: &apos;marcus&apos;, likes: &apos;javascript&apos; })
+
+// Get the stored object - store.js uses JSON.parse under the hood
+var user = RU.store.get(&apos;user&apos;)
+alert(user.name + &apos; likes &apos; + user.likes)
+
+// Get all stored values
+RU.store.getAll().user.name == &apos;marcus&apos;
+
+// Loop over all stored values
+RU.store.forEach(function(key, val) {
+    console.log(key, &apos;==&apos;, val)
+})
+</code></pre>
                     
                     </section>
                 
@@ -261,10 +245,8 @@
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../doc/date.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: date"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../doc/store.html" class="navigation navigation-next " aria-label="Next page: store"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
