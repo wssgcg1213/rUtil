@@ -1,9 +1,4 @@
 /**
- * Created at 15/9/28.
- * @Author Ling.
- * @Email i@zeroling.com
- */
-/**
  *
  * date 日期格式
  *

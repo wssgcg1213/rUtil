@@ -4,12 +4,14 @@
  * @Email i@zeroling.com
  */
 var gulp = require('gulp'),
+    amTransportGulp = require('gulp-am-transport'),
     concat = require('gulp-concat'),
     //rename = require('gulp-rename'),
     uglify = require('gulp-uglify');
 
 gulp.task('build', function () {
     gulp.src('./src/**/*.js')
+        .pipe(amTransportGulp({family:"RU"}))
         .pipe(concat('ru.js'))
         .pipe(gulp.dest('./examples/lib'))
         .pipe(uglify())

@@ -1,8 +1,5 @@
-/**
- * Created at 15/9/28.
- * @Author Ling.
- * @Email i@zeroling.com
- */
+window.RU = window.RU||{};
+(function(){
 /**
  *
  * date 日期格式
@@ -99,4 +96,5 @@ var date = {
         }
     }
 };
-module.exports = date;
+window.RU.date = date;
+})();
