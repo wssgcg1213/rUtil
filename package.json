@@ -1,0 +1,16 @@
+{
+  "name": "redrock-util",
+  "version": "1.0.0",
+  "description": "a javascript function library",
+  "keywords": [
+    "js"
+  ],
+  "devDependencies": {
+    "gulp-util": "~2.2.14",
+    "gulp": "*",
+    "gulp-uglify": "*",
+    "gulp-concat": "*"
+  },
+  "author": "Ling",
+  "license": "MIT"
+}
