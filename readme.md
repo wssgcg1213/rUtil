@@ -1,11 +1,18 @@
-##关于rUtil
-a javascript mobile func kit
-------
+## 关于rUtil
 
-- Author: zeroling
+### A Javascript Mobile kit.
 
-------
+着重于移动端H5开发的函数库
 
-###主要模块:
+- author: Ling.
+- date: 2015-09-29
+- Thanks to: alipay mobile fe team
+
+### Documentation
+
+[查看文档](http://rutil.zeroling.com)
+
+### 主要模块:
 
 - date
+- store
