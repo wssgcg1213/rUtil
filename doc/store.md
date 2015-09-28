@@ -1,34 +1,28 @@
 ## store
 
-store.js uses localStorage when available, and falls back on the userData behavior in IE6 and IE7. No flash to slow down your page load. No cookies to fatten your network requests.
+store 模块是给 localStorage 加的一层套
 
-store.js depends on JSON for serialization to disk.
+tip: 使用前判断RU.store.enabled
 
 ### 示例代码
 ```
-// Store 'marcus' at 'username'
 RU.store.set('username', 'marcus')
-
-// Get 'username'
 RU.store.get('username')
-
-// Remove 'username'
 RU.store.remove('username')
 
 // Clear all keys
 RU.store.clear()
 
-// Store an object literal - store.js uses JSON.stringify under the hood
+// 直接存对象直接量, 会用JSON.stringify格式化
 RU.store.set('user', { name: 'marcus', likes: 'javascript' })
 
-// Get the stored object - store.js uses JSON.parse under the hood
-var user = RU.store.get('user')
-alert(user.name + ' likes ' + user.likes)
+// 直接取对象直接量, 会用JSON.parse格式化
+RU.store.get('user')
 
-// Get all stored values
+// 获取所有数据
 RU.store.getAll().user.name == 'marcus'
 
-// Loop over all stored values
+// 遍历所有存入的数据
 RU.store.forEach(function(key, val) {
     console.log(key, '==', val)
 })
